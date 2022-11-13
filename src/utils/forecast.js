@@ -9,8 +9,8 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback("Weatherstack internal error.\nError code: " + body.error.code , undefined)
         } else {
-            callback(undefined, 'It is now ' + body.current.temperature + ' deg, and it feels like ' + body.current.feelslike + ' deg'
-        )
+            callback(undefined, 'It is now ' + body.current.temperature + ' deg, and it feels like ' + body.current.feelslike + ' deg.' + '\n'
+            + 'Wind speed is ' + body.current.wind_speed + '. Wind direction ' + body.current.wind_dir + '.')
         }
     })
 }
